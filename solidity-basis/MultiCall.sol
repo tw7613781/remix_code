@@ -29,4 +29,13 @@ contract TestMultiCall {
     function getData(uint _i) external pure returns (bytes memory) {
         return abi.encodeWithSignature("test(uint)", _i);
     }
+
+    function getInterfaceId() external pure returns (bytes4) {
+        return type(ITest).interfaceId;
+    }
+}
+
+interface ITest {
+    function add(uint, uint) external returns (uint);
+    function minu(uint, uint) external returns (uint);
 }
