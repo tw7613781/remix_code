@@ -5,6 +5,8 @@ interface IVault {
     function deposit(uint256 amount) external;
     function commitAndClose() external;
     function rollToNextOption() external;
+    function initiateWithdraw(uint256 numShares) external;
+    function completeWithdraw() external;
 }
 
 interface IERC20 {
